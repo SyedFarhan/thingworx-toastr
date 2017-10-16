@@ -1,0 +1,102 @@
+.widget-valuedisplay table:after {
+    display: none;
+}
+
+.widget-valuedisplay img {
+    box-sizing: border-box;
+    display: inline-block;
+    padding-right: 5px;
+    vertical-align: middle;
+}
+
+.widget-valuedisplay.Width img {
+    max-width: 100%;
+    height: auto;
+    max-width: none\9; /* IE 8 */
+    width: 100%\9; /* IE 8 */
+    width: auto;
+}
+
+.widget-valuedisplay.Height img {
+    width: auto;
+}
+
+.widget-valuedisplay {
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+    overflow: hidden;
+}
+
+.widget-valuedisplay.visible {
+    overflow: visible;
+}
+
+.widget-valuedisplay .renderer-image {
+    padding: 0;
+}
+
+.widget-valuedisplay .valuedisplay-novalue {
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+    height: 100%;
+    padding: 0 2px;
+}
+
+.widget-valuedisplay {
+    line-height: normal;
+}
+
+.widget-valuedisplay.fillcontent .valuedisplay-block,
+.widget-valuedisplay.fillcontent .renderer-true-default,
+.widget-valuedisplay .valuedisplay-container,
+.widget-valuedisplay.fillwidget .renderer-wrapper {
+    display: inline-block;
+}
+
+.widget-valuedisplay.top td {
+    vertical-align: top;
+}
+
+.widget-valuedisplay.bottom td {
+    vertical-align: bottom;
+}
+
+.widget-valuedisplay.middle .renderer-true-default span {
+    vertical-align: middle;
+}
+
+.widget-valuedisplay.bottom .renderer-true-default span {
+    vertical-align: bottom;
+}
+
+.widget-valuedisplay.top .renderer-true-default span {
+    vertical-align: top;
+}
+
+.widget-valuedisplay.formatted.fillwidget .valuedisplay-block {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
+
+.widget-valuedisplay.formatted.fillwidget .valuedisplay-container {
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+
+.widget-valuedisplay.formatted.fillwidget .renderer-true-default {
+    display: table-cell;
+}
+
+.widget-valuedisplay.formatted.middle.fillwidget .renderer-true-default {
+    vertical-align: middle;
+}
+
+.widget-valuedisplay.formatted.bottom.fillwidget .renderer-true-default {
+    vertical-align: bottom;
+}
+
+.widget-valuedisplay.nodata .valuedisplay-wrapper {
+    display: none;
+}

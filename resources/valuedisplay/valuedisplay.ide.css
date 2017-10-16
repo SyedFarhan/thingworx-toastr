@@ -1,0 +1,12 @@
+.widget-valuedisplay-helper {
+    background:url(images/helper.png) no-repeat;
+    width:100px;
+    height:22px;
+}
+.widget-valuedisplay .value-display-table, .widget-valuedisplay-static {
+    padding:0px 2px;
+}
+.widget-valuedisplay-border {
+    border-width:1px;
+    border-style:solid
+}
