@@ -9,15 +9,10 @@ TW.IDE.Widgets.toastr = function () {
       "description": "toastr",
       "category": ['Common'],
       "properties": {
-        "Title": {
-          "baseType": "STRING",
-          "defaultValue": "Measurments have been updated, please refresh!",
-          "isBindingTarget": false
-        },
         "Message": {
           "baseType": "STRING",
           "defaultValue": "Measurments have been updated, please refresh!",
-          "isBindingTarget": false
+          "isBindingTarget": true
         }
       }
     };

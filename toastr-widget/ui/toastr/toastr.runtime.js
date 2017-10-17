@@ -23,10 +23,9 @@ TW.Runtime.Widgets.toastr = function () {
     TW.log.info('# html: ' + html.toString());
     return '<div class="widget-content widget-toastr"></div>';
   };
-  var getTitle = this.getProperty("Title");
-  var getMessage = this.getProperty("Message");
-  this.afterRender = function () {·
-    toastr.info(this.getProperty("Title"),this.getProperty("Message"));
+
+  this.afterRender = function () {
+    toastr.info(this.getProperty("Title"), this.getProperty("Message"));
   };
 
 };
