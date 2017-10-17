@@ -3,7 +3,7 @@
 		<ExtensionPackage name="toastr"
 						  description="Using a toastr library"
 						  vendor="GE Digital"
-						  packageVersion="1.0.14"
+						  packageVersion="1.0.22"
 						  minimumThingWorxVersion="8.0.0">
 		</ExtensionPackage>
 	</ExtensionPackages>

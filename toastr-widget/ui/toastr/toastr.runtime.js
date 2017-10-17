@@ -11,12 +11,13 @@ TW.Runtime.Widgets.toastr = function () {
   "onclick": null,
   "showDuration": "300",
   "hideDuration": "1000",
-  "timeOut": "5000",
-  "extendedTimeOut": "1000",
+  "timeOut": 0,
+  "extendedTimeOut": 0,
   "showEasing": "swing",
   "hideEasing": "linear",
   "showMethod": "fadeIn",
-  "hideMethod": "fadeOut"
+  "hideMethod": "fadeOut",
+  "tapToDismiss": false
 }
 
   this.renderHtml = function () {
@@ -24,8 +25,30 @@ TW.Runtime.Widgets.toastr = function () {
     return '<div class="widget-content widget-toastr"></div>';
   };
 
-  this.afterRender = function () {
-    toastr.info(this.getProperty("Title"), this.getProperty("Message"));
+  this.showToastr = function(widgetReference) {
+    var message = widgetReference.getProperty('Message');
+    //console.log('statusMsg::showMessage ' + type + ', ' + message);
+    toastr.info(message);
   };
+
+  this.serviceInvoked = function (serviceName) {
+
+    var widgetReference = this;
+    if(serviceName === "ShowToastr") {
+      this.showToastr(widgetReference);
+    }
+  }
+
+  //this.afterRender = function () {
+  //  toastr.info(this.getProperty("Message"));
+  // };
+
+  this.updateProperty = function (updatePropertyInfo) {
+    if(updatePropertyInfo.TargetProperty) {
+      this.setProperty("Message",updatePropertyInfo.SinglePropertyValue);
+    }
+  };
+
+
 
 };
