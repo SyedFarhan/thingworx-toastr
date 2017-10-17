@@ -5,23 +5,30 @@ TW.IDE.Widgets.toastr = function () {
 
   this.widgetProperties = function () {
     return {
-      "name": "Hello, World!",
-      "description": "An example widget.",
+      "name": "Toastr",
+      "description": "toastr",
       "category": ['Common'],
       "properties": {
-        "Salutation": {
+        "Title": {
           "baseType": "STRING",
-          "defaultValue": "Hello, World!",
-          "isBindingTarget": true
+          "defaultValue": "Measurments have been updated, please refresh!",
+          "isBindingTarget": false
+        },
+        "Message": {
+          "baseType": "STRING",
+          "defaultValue": "Measurments have been updated, please refresh!",
+          "isBindingTarget": false
         }
       }
     };
   };
 
   this.renderHtml = function () {
-    return "<div class=\"widget-content widget-toastr\">" +
-             "<span class=\"salutation\">" + this.getProperty("Salutation") + "</span>" +
-           "</div>";
+
+    var html = '';
+
+    html += '<div class="widget-content widget-toastr"></div>';
+    return html;
   };
 
   this.afterSetProperty = function (name, value) {
