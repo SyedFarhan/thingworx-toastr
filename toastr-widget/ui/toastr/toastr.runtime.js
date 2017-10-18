@@ -1,5 +1,5 @@
 TW.Runtime.Widgets.toastr = function () {
-
+  var thisWidget = this;
 
   toastr.options = {
   "closeButton": this.getProperty("closeButton"),
@@ -23,8 +23,8 @@ TW.Runtime.Widgets.toastr = function () {
   this.renderHtml = function () {
     TW.log.info('# html: ' + html.toString());
     return '<div class="widget-content widget-toastr"></div>';
-  };
 
+  };
 
 
 
@@ -32,7 +32,13 @@ TW.Runtime.Widgets.toastr = function () {
   this.showToastr = function(widgetReference) {
     var message = widgetReference.getProperty('Message');
     //console.log('statusMsg::showMessage ' + type + ', ' + message);
-    toastr.info(message + '<br /><button type="button" class="btn clear">Refresh</button>');
+    toastr.info('<div class="toastr-trio"><span id="toastr-span">' + message + '</span> <button id="toastr-refresh" type="button" class="btn clear">Refresh<i class="fa fa-refresh" aria-hidden="true"></i></button></div>');
+    $('#' + thisWidget.jqElementId + '-refresh').bind('click', function (e) {
+      thisWidget.jqElement.triggerHandler('Clicked');
+      e.preventDefault();
+      toastr.remove();
+      toastr.clear();
+  });
   };
 
   this.serviceInvoked = function (serviceName) {
@@ -41,11 +47,7 @@ TW.Runtime.Widgets.toastr = function () {
     if(serviceName === "ShowToastr") {
       this.showToastr(widgetReference);
     }
-  }
-
-  //this.afterRender = function () {
-  //  toastr.info(this.getProperty("Message"));
-  // };
+  };
 
   this.updateProperty = function (updatePropertyInfo) {
     if(updatePropertyInfo.TargetProperty) {
@@ -53,6 +55,8 @@ TW.Runtime.Widgets.toastr = function () {
     }
   };
 
+  this.beforeDestroy = function() {
+  };
 
 
 };
