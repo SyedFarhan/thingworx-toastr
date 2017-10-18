@@ -32,12 +32,6 @@ TW.IDE.Widgets.toastr = function () {
           "defaultValue": 500,
           "isBindingTarget": false
         },
-        "tapToDismiss": {
-          "baseType": "BOOLEAN",
-          "isEditable":true,
-          "defaultValue": false,
-          "isBindingTarget": false
-        },
         'Width': {
             'defaultValue': 50,
             "isEditable":true,
