@@ -2,8 +2,8 @@
 	<ExtensionPackages>
 		<ExtensionPackage name="toastr"
 						  description="Using a toastr library"
-						  vendor="GE Digital"
-						  packageVersion="1.0.30"
+						  vendor="GE Digital (CorlaS, ScottW, SyedF)"
+						  packageVersion="1.1.0"
 						  minimumThingWorxVersion="8.0.0">
 		</ExtensionPackage>
 	</ExtensionPackages>
@@ -15,7 +15,7 @@
 				<FileResource type="JS" file="toastr.runtime.js" description="" isDevelopment="false" isRuntime="true" />
 				<FileResource type="JS" file="jslibrary/toastr.js" description="" isDevelopment="true" isRuntime="true" />
 				<FileResource type="CSS" file="toastr.runtime.css" description="" isDevelopment="false" isRuntime="true" />
- 			</UIResources>
+			</UIResources>
 		</Widget>
 	</Widgets>
 </Entities>

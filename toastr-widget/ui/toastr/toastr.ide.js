@@ -1,12 +1,13 @@
 TW.IDE.Widgets.toastr = function () {
   this.widgetIconUrl = function() {
-      return  "../Common/extensions/toastr_ExtensionPackage/ui/toastr/toastr.ide.png";
+      return  "../Common/extensions/toastr/ui/toastr/toastr.ide.png";
   };
 
   this.widgetProperties = function () {
     return {
       "name": "Toastr",
       "description": "toastr",
+      'iconImage': 'toastr.ide.png',
       "category": ['Common'],
       "properties": {
         "Message": {
@@ -33,12 +34,12 @@ TW.IDE.Widgets.toastr = function () {
           "isBindingTarget": false
         },
         'Width': {
-            'defaultValue': 50,
+            'defaultValue': 100,
             "isEditable":true,
             'description': TW.IDE.I18NController.translate('tw.validator-ide.properties.width.description')
         },
         'Height': {
-            'defaultValue': 50,
+            'defaultValue': 25,
             "isEditable":true,
             'description': TW.IDE.I18NController.translate('tw.validator-ide.properties.height.description')
         }
@@ -53,11 +54,16 @@ TW.IDE.Widgets.toastr = function () {
   };
 
   this.renderHtml = function () {
+      var html = '';
+      html += '<div class="widget-content widget-toastr"><table height="100%" width="100%"><tr><td valign="middle" align="center"><span>Toastr: Invisible on runtime</span></td></tr></table></div>';
+      return html;
 
-    var html = '';
+  };
 
-    html += '<div class="widget-content widget-toastr" height="25px" width="25px"></div>';
-    return html;
+  this.widgetEvents = function () {
+      return {
+          'Clicked': { 'warnIfNotBound': true }
+    };
   };
 
   this.afterSetProperty = function (name, value) {

@@ -33,7 +33,7 @@ TW.Runtime.Widgets.toastr = function () {
     var message = widgetReference.getProperty('Message');
     //console.log('statusMsg::showMessage ' + type + ', ' + message);
     toastr.info('<div class="toastr-trio"><span id="toastr-span">' + message + '</span> <button id="toastr-refresh" type="button" class="btn clear">Refresh<i class="fa fa-refresh" aria-hidden="true"></i></button></div>');
-    $('#' + thisWidget.jqElementId + '-refresh').bind('click', function (e) {
+    $('#toastr-refresh').bind('click', function (e) {
       thisWidget.jqElement.triggerHandler('Clicked');
       e.preventDefault();
       toastr.remove();
